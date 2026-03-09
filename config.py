@@ -14,7 +14,7 @@ JELLYSTAT_API_KEY = "5e2b91b6-7ac2-4c04-9127-310ae8f9499d"  # Jellystat → Sett
 
 # ── Utenti da escludere (es. account admin di servizio) ───────────────────────
 # Metti qui i nomi utente Jellyfin che NON devono ricevere playlist
-EXCLUDED_USERS = ["Lorenzo", "Marco", "alinADivina"]
+EXCLUDED_USERS = ["Marco"]
 
 # ── Log ───────────────────────────────────────────────────────────────────────
 LOG_DIR  = "/var/log/smartplaylists"
