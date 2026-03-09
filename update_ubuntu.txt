@@ -1,0 +1,9 @@
+Comandi da eseguire per fare un update del progetto smartplaylists da windows
+
+# SU WINDOWS
+scp "C:\Users\Dario Lampa\Documents\Esercizi programmazione\Python\Progetto server\Smartplaylists\*" dario_lampa@192.168.1.15:~/smartplaylists_update/
+
+# SU UBUNTU SERVER
+sudo cp ~/smartplaylists_update/* /usr/local/bin/smartplaylists/
+sudo rm -rf ~/smartplaylists_update/
+sudo python3 /usr/local/bin/smartplaylists/orchestrator.py
