@@ -6,7 +6,7 @@ Modifica solo questo file per adattare tutto il sistema al tuo setup.
 
 # ── Jellyfin ──────────────────────────────────────────────────────────────────
 JELLYFIN_URL     = "http://192.168.1.15:8096/jellyfin"
-JELLYFIN_API_KEY = "6baa16817c7a44289583cef33cdae375"   # Dashboard → Avanzate → Chiavi API
+JELLYFIN_API_KEY = "b04d8cbdc42f41149a1b47c29c2deffa"   # Dashboard → Avanzate → Chiavi API
 
 # ── Jellystat ─────────────────────────────────────────────────────────────────
 JELLYSTAT_URL     = "http://192.168.1.15:3000"
