@@ -130,7 +130,7 @@ class JellyfinClient:
     def get_genres_for_items(self, user_id: str,
                              item_ids: list[str]) -> dict[str, list[str]]:
         result = {}
-        for i in range(0, len(item_ids), 100):
+        for i in range(0, len(item_ids), 50):
             chunk = item_ids[i:i+100]
             data = self._get("/Items", params={
                 "UserId": user_id,
@@ -175,7 +175,7 @@ class JellyfinClient:
         if not item_ids:
             return []
         valid = []
-        for i in range(0, len(item_ids), 200):
+        for i in range(0, len(item_ids), 50):
             chunk = item_ids[i:i+200]
             result = self._get("/Items", params={
                 "UserId": user_id,
