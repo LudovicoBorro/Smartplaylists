@@ -21,7 +21,7 @@ import logging
 import requests
 from datetime import datetime, timedelta
 from collections import Counter
-from config import JELLYSTAT_URL, JELLYSTAT_API_KEY
+from config import JELLYSTAT_URL, JELLYSTAT_API_KEY, MIN_PLAYBACK_TIME
 
 log = logging.getLogger(__name__)
 
@@ -109,6 +109,9 @@ class JellystatClient:
     def _extract_date(self, record: dict) -> str:
         return (record.get("ActivityDateInserted") or
                 record.get("datePlayed") or record.get("DatePlayed") or "")
+    
+    def _extract_playback_duration(self, record):
+        return record.get("PlaybackDuration", 0)
 
     # ── API pubblica ──────────────────────────────────────────────────────────
 
@@ -158,6 +161,12 @@ class JellystatClient:
             iid = self._extract_item_id(record)
             if not iid:
                 continue
+
+            play_duration = self._extract_playback_duration(record)
+
+            if play_duration < MIN_PLAYBACK_TIME:
+                continue
+
             date_str = self._extract_date(record)
             if iid not in last_played or date_str > last_played[iid]["lastPlayed"]:
                 last_played[iid] = {"itemId": iid, "lastPlayed": date_str,

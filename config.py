@@ -25,6 +25,9 @@ LOG_FILE = f"{LOG_DIR}/orchestrator.log"   # log orchestratore
 NOTIFY_EMAIL          = "ludovicoborro@gmail.com"      # es. "tuamail@gmail.com" — lascia vuoto per disabilitare
 NOTIFY_ON_ERROR_ONLY  = True    # True = mail solo su errore
 
+# ── Parametri utili per le funzioni di ricerca delle canzoni da Jellystat ─────
+MIN_PLAYBACK_TIME = 30       # tempo minimo in secondi affinchè una canzone venga considerata 
+
 # ══════════════════════════════════════════════════════════════════════════════
 #  PARAMETRI PLAYLIST — modifica a piacere
 # ══════════════════════════════════════════════════════════════════════════════
