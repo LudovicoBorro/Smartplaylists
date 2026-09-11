@@ -70,7 +70,13 @@ class JellyfinClient:
     def __init__(self):
         self.base = JELLYFIN_URL.rstrip("/")
         self.headers = {
-            "X-Emby-Token": JELLYFIN_API_KEY,
+            "Authorization": (
+                f'MediaBrowser Client="SmartPlaylists", '
+                f'Device="Server", '
+                f'DeviceId="smartplaylists", '
+                f'Version="1.0.0", '
+                f'Token="{JELLYFIN_API_KEY}"'
+            ),
             "Content-Type": "application/json",
             "Accept": "application/json",
         }
